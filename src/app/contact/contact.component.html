@@ -1,0 +1,164 @@
+<section id="contact" class="relative py-20 lg:py-32 bg-dark-900/50 overflow-hidden">
+  <!-- Background -->
+  <div class="absolute inset-0 overflow-hidden pointer-events-none">
+    <div class="absolute top-0 left-0 w-96 h-96 bg-primary-600/5 rounded-full blur-3xl"></div>
+    <div class="absolute bottom-0 right-0 w-96 h-96 bg-primary-600/5 rounded-full blur-3xl"></div>
+  </div>
+
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <div class="max-w-4xl mx-auto">
+      <!-- Header -->
+      <div class="text-center mb-16 animate-slide-up">
+        <h2 class="text-4xl md:text-5xl font-display font-bold text-dark-100 mb-4">Parlons ensemble</h2>
+        <p class="text-dark-400 max-w-2xl mx-auto">Je suis toujours ouvert aux discussions sur de nouvelles opportunités.</p>
+        <div class="w-16 h-1 bg-gradient-to-r from-primary-400 to-primary-600 mx-auto mt-4"></div>
+      </div>
+
+      <div class="grid lg:grid-cols-2 gap-12 animate-slide-up">
+        <!-- Contact Info -->
+        <div class="space-y-8">
+          <!-- Email -->
+          <div class="flex gap-4">
+            <div class="flex-shrink-0">
+              <div class="flex items-center justify-center h-12 w-12 rounded-lg bg-primary-600/10">
+                <svg class="h-6 w-6 text-primary-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                </svg>
+              </div>
+            </div>
+            <div>
+              <h3 class="text-lg font-semibold text-dark-100 mb-1">Email</h3>
+              <a href="youssraarhouma&#64;gmail.com" class="text-primary-400 hover:text-primary-300 transition-colors">
+                youssraarhouma&#64;gmail.com
+              </a>
+            </div>
+          </div>
+
+          <!-- Location -->
+          <div class="flex gap-4">
+            <div class="flex-shrink-0">
+              <div class="flex items-center justify-center h-12 w-12 rounded-lg bg-primary-600/10">
+                <svg class="h-6 w-6 text-primary-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+                </svg>
+              </div>
+            </div>
+            <div>
+              <h3 class="text-lg font-semibold text-dark-100 mb-1">Localisation</h3>
+              <p class="text-dark-400">Tunisie</p>
+            </div>
+          </div>
+
+          <!-- Social Links -->
+          <div class="flex gap-4">
+            <div class="flex-shrink-0">
+              <div class="flex items-center justify-center h-12 w-12 rounded-lg bg-primary-600/10">
+                <svg class="h-6 w-6 text-primary-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.658 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"/>
+                </svg>
+              </div>
+            </div>
+            <div>
+              <h3 class="text-lg font-semibold text-dark-100 mb-3">Suivez-moi</h3>
+              <div class="flex gap-3">
+                <a href="https://github.com/yosRhouma" target="_blank" class="text-dark-400 hover:text-primary-500 transition-colors">
+                  GitHub
+                </a>
+                <a href="https://www.linkedin.com/in/yosra-rhouma-962b72244/" target="_blank" class="text-dark-400 hover:text-primary-500 transition-colors">
+                  LinkedIn
+                </a>
+                
+              </div>
+            </div>
+          </div>
+
+          <!-- Response Time -->
+          
+        </div>
+
+        <!-- Contact Form -->
+        <div>
+          <!-- Success/Error Messages -->
+          <div *ngIf="successMessage" class="mb-6 p-4 rounded-lg bg-green-500/10 border border-green-500/30 text-green-400 text-sm">
+            {{ successMessage }}
+          </div>
+          <div *ngIf="errorMessage" class="mb-6 p-4 rounded-lg bg-red-500/10 border border-red-500/30 text-red-400 text-sm">
+            {{ errorMessage }}
+          </div>
+
+          <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="space-y-6">
+            <!-- Name -->
+            <div>
+              <label class="block text-sm font-medium text-dark-200 mb-2">Nom</label>
+              <input 
+                type="text"
+                formControlName="name"
+                class="w-full px-4 py-3 rounded-lg bg-dark-800/30 border border-dark-700 text-dark-100 placeholder-dark-500 focus:outline-none focus:border-primary-600 transition-all"
+                placeholder="Votre nom"
+              />
+              <span *ngIf="submitted && f['name'].invalid" class="text-xs text-red-400 mt-1 block">
+                The name is required and must be at least 2 characters
+              </span>
+            </div>
+
+            <!-- Email -->
+            <div>
+              <label class="block text-sm font-medium text-dark-200 mb-2">Email</label>
+              <input 
+                type="email"
+                formControlName="email"
+                class="w-full px-4 py-3 rounded-lg bg-dark-800/30 border border-dark-700 text-dark-100 placeholder-dark-500 focus:outline-none focus:border-primary-600 transition-all"
+                placeholder="votre.email@exemple.com"
+              />
+              <span *ngIf="submitted && f['email'].invalid" class="text-xs text-red-400 mt-1 block">
+                A valid email is required
+              </span>
+            </div>
+
+            <!-- Subject -->
+            <div>
+              <label class="block text-sm font-medium text-dark-200 mb-2">Sujet</label>
+              <input 
+                type="text"
+                formControlName="subject"
+                class="w-full px-4 py-3 rounded-lg bg-dark-800/30 border border-dark-700 text-dark-100 placeholder-dark-500 focus:outline-none focus:border-primary-600 transition-all"
+                placeholder="Sujet de votre message"
+              />
+              <span *ngIf="submitted && f['subject'].invalid" class="text-xs text-red-400 mt-1 block">
+                Subject is required and must be at least 5 characters
+              </span>
+            </div>
+
+            <!-- Message -->
+            <div>
+              <label class="block text-sm font-medium text-dark-200 mb-2">Message</label>
+              <textarea 
+                formControlName="message"
+                rows="5"
+                class="w-full px-4 py-3 rounded-lg bg-dark-800/30 border border-dark-700 text-dark-100 placeholder-dark-500 focus:outline-none focus:border-primary-600 transition-all resize-none"
+                placeholder="Votre message..."
+              ></textarea>
+              <span *ngIf="submitted && f['message'].invalid" class="text-xs text-red-400 mt-1 block">
+                Message is required and must be at least 10 characters
+              </span>
+            </div>
+
+            <!-- Submit Button -->
+            <button 
+              type="submit"
+              [disabled]="loading"
+              class="w-full px-8 py-4 bg-primary-600 hover:bg-primary-700 disabled:bg-dark-700 text-white font-semibold rounded-xl transition-all shadow-lg shadow-primary-600/30 hover:shadow-primary-600/50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+            >
+              <span *ngIf="!loading">Envoyer le message</span>
+              <span *ngIf="loading">Envoi en cours...</span>
+              <svg *ngIf="!loading" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+              </svg>
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

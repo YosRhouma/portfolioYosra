@@ -1,1 +1,123 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+  
+  body {
+    @apply bg-dark-950 text-dark-50 font-body antialiased;
+    overflow-x: hidden;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Scrollbar personnalisée */
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-dark-900;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-primary-600 rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-primary-500;
+  }
+}
+
+@layer components {
+  .section-container {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24;
+  }
+
+  .section-title {
+    @apply text-3xl md:text-4xl lg:text-5xl font-display font-bold mb-4;
+    background: linear-gradient(to right, #10b981, #34d399);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .section-subtitle {
+    @apply text-lg md:text-xl text-dark-400 mb-12;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center gap-2 px-8 py-3 bg-primary-600 hover:bg-primary-700 
+           text-white font-semibold rounded-lg transition-all duration-300 
+           hover:shadow-lg hover:shadow-primary-600/50 hover:-translate-y-0.5;
+  }
+
+  .btn-outline {
+    @apply inline-flex items-center gap-2 px-8 py-3 border-2 border-primary-600 
+           text-primary-500 hover:bg-primary-600 hover:text-white font-semibold 
+           rounded-lg transition-all duration-300;
+  }
+
+  .card {
+    @apply bg-dark-900/50 backdrop-blur-sm border border-dark-800 rounded-2xl p-6 
+           hover:border-primary-600/50 transition-all duration-300 
+           hover:shadow-lg hover:shadow-primary-600/10;
+  }
+
+  .skill-badge {
+    @apply px-4 py-2 bg-dark-800/50 border border-dark-700 rounded-lg 
+           text-sm font-medium hover:border-primary-600/50 
+           hover:bg-dark-800 transition-all duration-300;
+  }
+
+  .nav-link {
+    @apply text-dark-300 hover:text-primary-500 font-medium transition-colors duration-200;
+  }
+
+  .nav-link-active {
+    @apply text-primary-500;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    background: linear-gradient(to right, #10b981, #34d399);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .bg-mesh {
+    background: 
+      radial-gradient(at 0% 0%, rgba(16, 185, 129, 0.1) 0px, transparent 50%),
+      radial-gradient(at 80% 100%, rgba(16, 185, 129, 0.08) 0px, transparent 50%),
+      #020617;
+  }
+
+  .animate-delay-100 {
+    animation-delay: 0.1s;
+  }
+  
+  .animate-delay-200 {
+    animation-delay: 0.2s;
+  }
+  
+  .animate-delay-300 {
+    animation-delay: 0.3s;
+  }
+  
+  .animate-delay-400 {
+    animation-delay: 0.4s;
+  }
+  
+  .animate-delay-500 {
+    animation-delay: 0.5s;
+  }
+}

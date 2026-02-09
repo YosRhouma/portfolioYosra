@@ -1,0 +1,11 @@
+{
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist/portfolio-yosra",
+  "framework": "angular",
+  "nodeVersion": "18.x",
+  "env": {
+    "NG_APP_EMAILJS_PUBLIC_KEY": "@NG_APP_EMAILJS_PUBLIC_KEY",
+    "NG_APP_EMAILJS_SERVICE_ID": "@NG_APP_EMAILJS_SERVICE_ID",
+    "NG_APP_EMAILJS_TEMPLATE_ID": "@NG_APP_EMAILJS_TEMPLATE_ID"
+  }
+}

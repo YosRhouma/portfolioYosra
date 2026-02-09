@@ -1,0 +1,109 @@
+<section id="about" class="relative py-20 lg:py-32 bg-dark-900/50 overflow-hidden">
+  <!-- Background Elements -->
+  <div class="absolute inset-0 overflow-hidden pointer-events-none">
+    <div class="absolute -top-40 -right-40 w-80 h-80 bg-primary-600/5 rounded-full blur-3xl"></div>
+    <div class="absolute bottom-0 left-0 w-96 h-96 bg-primary-700/5 rounded-full blur-3xl"></div>
+  </div>
+
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <!-- Section Header -->
+    <div class="text-center mb-16 animate-slide-up">
+      <h2 class="text-4xl md:text-5xl font-display font-bold text-dark-100 mb-4">
+        À propos de moi
+      </h2>
+      <div class="w-16 h-1 bg-gradient-to-r from-primary-400 to-primary-600 mx-auto"></div>
+    </div>
+
+    <!-- About Content -->
+    <div class="max-w-4xl mx-auto mb-16 animate-slide-up">
+      <!-- Text Content -->
+      <div>
+        <p class="text-lg text-dark-300 leading-relaxed">
+          {{ portfolio.about.summary }}
+        </p>
+        <!-- Technologies Grid -->
+<div class="mt-16 animate-slide-up">
+  <h3 class="text-2xl font-display font-bold text-dark-100 mb-8 text-center">
+    Compétences techniques
+  </h3>
+
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+    <!-- Full Stack -->
+    <div class="p-8 rounded-xl bg-dark-800/30 border border-dark-700/50 hover:border-primary-600/30 transition-all">
+      <h4 class="text-primary-400 font-semibold mb-4 flex items-center gap-2">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+        </svg>
+        Full-Stack
+      </h4>
+
+      <ul class="space-y-2">
+        <li class="text-sm text-dark-300">Java, Spring Boot (REST API)</li>
+        <li class="text-sm text-dark-300">Angular, TypeScript</li>
+        <li class="text-sm text-dark-300">HTML,CSS <i class="fa fa-css3" aria-hidden="true"></i></li>
+        <li class="text-sm text-dark-300">MongoDB, MySQL</li>
+      </ul>
+    </div>
+
+    <!-- Tools & Methodologies -->
+    <div class="p-8 rounded-xl bg-dark-800/30 border border-dark-700/50 hover:border-primary-600/30 transition-all">
+      <h4 class="text-primary-400 font-semibold mb-4 flex items-center gap-2">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M13 10V3L4 14h7v7l9-11h-7z"/>
+        </svg>
+        Outils & Méthodologies
+      </h4>
+
+      <ul class="space-y-2">
+        <li class="text-sm text-dark-300">Git, GitLab, GitHub</li>
+        <li class="text-sm text-dark-300">Postman, Swagger, APIDog</li>
+        <li class="text-sm text-dark-300">Jira, ClickUp</li>
+        <li class="text-sm text-dark-300">Agile Scrum, UML</li>
+      </ul>
+    </div>
+        <!-- Data & AI -->
+    <div class="p-8 rounded-xl bg-dark-800/30 border border-dark-700/50 hover:border-primary-600/30 transition-all">
+      <h4 class="text-primary-400 font-semibold mb-4 flex items-center gap-2">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-10V4m0 16v-2"/>
+        </svg>
+        IA
+      </h4>
+
+      <ul class="space-y-2">
+        <li class="text-sm text-dark-300">STT / TTS</li>
+        <li class="text-sm text-dark-300">LLM, OpenAI, Groq</li>
+        <li class="text-sm text-dark-300">Python</li>
+        <li class="text-sm text-dark-300">Mediapipe</li>
+      </ul>
+    </div>
+        
+
+  </div>
+</div>
+<br>
+    <h3 class="text-2xl font-display font-bold text-dark-100 mb-8 text-center">
+    Langues
+  </h3>
+
+        <!-- Highlights -->
+        <div class="grid grid-cols-2 gap-4 mt-8">
+          <div *ngFor="let lang of portfolio.languages" 
+               class="flex items-start gap-3 p-4 rounded-lg bg-dark-800/30 border border-dark-700/50 hover:border-primary-600/30 transition-all">
+            <svg class="w-5 h-5 text-primary-500 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+            </svg>
+            <span class="text-sm text-dark-300">{{lang.language}}</span>
+          </div>
+        </div>
+
+        
+      </div>
+    </div>
+
+    </div>
+</section>

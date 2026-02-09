@@ -1,0 +1,45 @@
+<header class="fixed top-0 left-0 right-0 z-50 transition-all duration-300" [class.bg-dark-950\95]="isScrolled" [class.backdrop-blur-lg]="isScrolled" [class.shadow-lg]="isScrolled" [class.shadow-primary-600\10]="isScrolled">
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-20">
+      <!-- Logo -->
+      <a href="#home" class="flex items-center gap-2 font-display font-bold text-xl text-dark-100 hover:text-primary-500 transition-colors">
+        <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-primary-500 to-primary-600 flex items-center justify-center">
+          <span class="text-white font-bold"> YR </span>
+        </div>
+        <span class="hidden sm:inline">Yosra Rhouma</span>
+      </a>
+
+      <!-- Desktop Navigation -->
+      <nav class="hidden lg:flex items-center gap-8">
+        <a href="#about" class="text-dark-300 hover:text-primary-500 transition-colors text-sm font-medium">À propos</a>
+        <a href="#experiences" class="text-dark-300 hover:text-primary-500 transition-colors text-sm font-medium">Expériences</a>
+
+        <a href="#projects" class="text-dark-300 hover:text-primary-500 transition-colors text-sm font-medium">Projets</a>
+        <a href="#contact" class="px-6 py-2 rounded-lg bg-primary-600 hover:bg-primary-700 text-white text-sm font-medium transition-all">
+          Me contacter
+        </a>
+      </nav>
+
+      <!-- Mobile Menu Button -->
+      <button (click)="toggleMobileMenu()" class="lg:hidden p-2 text-dark-300 hover:text-primary-500 transition-colors" aria-label="Toggle menu">
+        <svg *ngIf="!isMobileMenuOpen" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+        <svg *ngIf="isMobileMenuOpen" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile Menu -->
+    <nav *ngIf="isMobileMenuOpen" class="lg:hidden pb-6 space-y-4 border-t border-dark-800 pt-4 animate-slide-down">
+      <a href="#about" (click)="scrollToSection('about')" class="block text-dark-300 hover:text-primary-500 transition-colors text-sm font-medium">À propos</a>
+      <a href="#experiences" (click)="scrollToSection('experiences')" class="block text-dark-300 hover:text-primary-500 transition-colors text-sm font-medium">Expériences</a>
+
+      <a href="#projects" (click)="scrollToSection('projects')" class="block text-dark-300 hover:text-primary-500 transition-colors text-sm font-medium">Projets</a>
+      <a href="#contact" (click)="scrollToSection('contact')" class="block px-6 py-2 rounded-lg bg-primary-600 hover:bg-primary-700 text-white text-sm font-medium transition-all text-center">
+        Me contacter
+      </a>
+    </nav>
+  </div>
+</header>
