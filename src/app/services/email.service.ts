@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import emailjs from '@emailjs/browser';
+import { environment } from '../../environments/environment';
 
 interface ContactForm {
   name: string;
@@ -12,48 +13,78 @@ interface ContactForm {
   providedIn: 'root'
 })
 export class EmailService {
-  private publicKey: string | undefined;
-  private serviceId: string | undefined;
-  private templateId: string | undefined;
+  private publicKey: string;
+  private serviceId: string;
+  private templateId: string;
 
   constructor() {
-    // Do not access browser globals when running in SSR / node environment
-    if (typeof window === 'undefined') return;
+    this.publicKey = environment.emailJsPublicKey;
+    this.serviceId = environment.emailJsServiceId;
+    this.templateId = environment.emailJsTemplateId;
 
-    // Vite exposes env vars as import.meta.env.VITE_*
-    // Use a safe any cast to avoid TS issues in this file
-    const env = (import.meta as any).env || {};
-    this.publicKey = env.VITE_EMAILJS_PUBLIC_KEY || env.NG_APP_EMAILJS_PUBLIC_KEY || 'YOUR_PUBLIC_KEY';
-    this.serviceId = env.VITE_EMAILJS_SERVICE_ID || env.NG_APP_EMAILJS_SERVICE_ID || 'YOUR_SERVICE_ID';
-    this.templateId = env.VITE_EMAILJS_TEMPLATE_ID || env.NG_APP_EMAILJS_TEMPLATE_ID || 'YOUR_TEMPLATE_ID';
-
-    // Initialize EmailJS in the browser
-    try {
-      if (this.publicKey) {
-        emailjs.init(this.publicKey);
-      }
-    } catch (e) {
-      // swallow initialization errors in environments where EmailJS cannot run
-      // console.warn('EmailJS init failed', e);
+    if (this.publicKey && this.publicKey !== 'YOUR_PUBLIC_KEY') {
+      emailjs.init(this.publicKey);
     }
   }
 
   sendEmail(formData: ContactForm): Promise<any> {
-    const templateParams = {
-      to_email: 'youssraarhouma@gmail.com',
-      from_name: formData.name,
-      from_email: formData.email,
-      subject: formData.subject,
-      message: formData.message,
-      reply_to: formData.email
-    };
+    // 1. Créer un formulaire HTML dynamique
+    const form = document.createElement('form');
+    
+    // 2. Ajouter les champs cachés (les noms DOIVENT correspondre au template)
+    const nameInput = document.createElement('input');
+    nameInput.type = 'hidden';
+    nameInput.name = 'name';           // ⚠️ DOIT correspondre au template
+    nameInput.value = formData.name;
+    form.appendChild(nameInput);
+    
+    const emailInput = document.createElement('input');
+    emailInput.type = 'hidden';
+    emailInput.name = 'from_email';    // ⚠️ DOIT correspondre au template
+    emailInput.value = formData.email;
+    form.appendChild(emailInput);
+    
+    const subjectInput = document.createElement('input');
+    subjectInput.type = 'hidden';
+    subjectInput.name = 'subject';     // ⚠️ DOIT correspondre au template
+    subjectInput.value = formData.subject;
+    form.appendChild(subjectInput);
+    
+    const messageInput = document.createElement('input');
+    messageInput.type = 'hidden';
+    messageInput.name = 'message';     // ⚠️ DOIT correspondre au template
+    messageInput.value = formData.message;
+    form.appendChild(messageInput);
+    
+    const timeInput = document.createElement('input');
+    timeInput.type = 'hidden';
+    timeInput.name = 'time';           // ⚠️ DOIT correspondre au template
+    timeInput.value = new Date().toLocaleString('fr-FR', {
+      day: 'numeric',
+      month: 'long',
+      year: 'numeric',
+      hour: '2-digit',
+      minute: '2-digit'
+    });
+    form.appendChild(timeInput);
 
-    const service = this.serviceId || 'YOUR_SERVICE_ID';
-    const template = this.templateId || 'YOUR_TEMPLATE_ID';
-    if (typeof window === 'undefined') {
-      return Promise.reject(new Error('Email sending is not available in this environment'));
-    }
+    // 3. Ajouter temporairement le formulaire au DOM
+    document.body.appendChild(form);
 
-    return emailjs.send(service, template, templateParams);
+    // 4. Envoyer avec sendForm() au lieu de send()
+    return emailjs.sendForm(this.serviceId, this.templateId, form)
+      .then((response) => {
+        // Nettoyer : retirer le formulaire du DOM
+        document.body.removeChild(form);
+        return response;
+      })
+      .catch((error) => {
+        console.error('Erreur envoi email:', error);
+        // Nettoyer même en cas d'erreur
+        if (form.parentNode) {
+          document.body.removeChild(form);
+        }
+        throw error;
+      });
   }
 }

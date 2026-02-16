@@ -6,10 +6,11 @@
   </div>
 
   <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <ng-container *ngIf="portfolio$ | async as portfolio">
     <!-- Section Header -->
     <div class="text-center mb-16 animate-slide-up">
       <h2 class="text-4xl md:text-5xl font-display font-bold text-dark-100 mb-4">
-        À propos de moi
+        {{ 'about.title' | translate }}
       </h2>
       <div class="w-16 h-1 bg-gradient-to-r from-primary-400 to-primary-600 mx-auto"></div>
     </div>
@@ -21,89 +22,155 @@
         <p class="text-lg text-dark-300 leading-relaxed">
           {{ portfolio.about.summary }}
         </p>
+
         <!-- Technologies Grid -->
-<div class="mt-16 animate-slide-up">
-  <h3 class="text-2xl font-display font-bold text-dark-100 mb-8 text-center">
-    Compétences techniques
-  </h3>
+        <div class="mt-16 animate-slide-up">
+          <h3 class="text-2xl font-display font-bold text-dark-100 mb-8 text-center">
+            {{ 'about.skills.title' | translate }}
+          </h3>
 
-  <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Full Stack -->
+            <div class="p-8 rounded-xl bg-dark-800/30 border border-dark-700/50 hover:border-primary-600/30 transition-all">
+              <h4 class="text-primary-400 font-semibold mb-4 flex items-center gap-2">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                </svg>
+                {{ 'about.skills.fullStack' | translate }}
+              </h4>
 
-    <!-- Full Stack -->
-    <div class="p-8 rounded-xl bg-dark-800/30 border border-dark-700/50 hover:border-primary-600/30 transition-all">
-      <h4 class="text-primary-400 font-semibold mb-4 flex items-center gap-2">
-        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
-        </svg>
-        Full-Stack
-      </h4>
+              <ul class="space-y-2">
+                <li class="text-sm text-dark-300">Java, Spring Boot (REST API)</li>
+                <li class="text-sm text-dark-300">Angular, TypeScript</li>
+                <li class="text-sm text-dark-300">HTML, CSS</li>
+                <li class="text-sm text-dark-300">MongoDB, MySQL</li>
+              </ul>
+            </div>
 
-      <ul class="space-y-2">
-        <li class="text-sm text-dark-300">Java, Spring Boot (REST API)</li>
-        <li class="text-sm text-dark-300">Angular, TypeScript</li>
-        <li class="text-sm text-dark-300">HTML,CSS <i class="fa fa-css3" aria-hidden="true"></i></li>
-        <li class="text-sm text-dark-300">MongoDB, MySQL</li>
-      </ul>
-    </div>
+            <!-- Tools & Methodologies -->
+            <div class="p-8 rounded-xl bg-dark-800/30 border border-dark-700/50 hover:border-primary-600/30 transition-all">
+              <h4 class="text-primary-400 font-semibold mb-4 flex items-center gap-2">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                </svg>
+                {{ 'about.skills.toolsAndMethodologies' | translate }}
+              </h4>
 
-    <!-- Tools & Methodologies -->
-    <div class="p-8 rounded-xl bg-dark-800/30 border border-dark-700/50 hover:border-primary-600/30 transition-all">
-      <h4 class="text-primary-400 font-semibold mb-4 flex items-center gap-2">
-        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                d="M13 10V3L4 14h7v7l9-11h-7z"/>
-        </svg>
-        Outils & Méthodologies
-      </h4>
+              <ul class="space-y-2">
+                <li class="text-sm text-dark-300">Git, GitLab, GitHub</li>
+                <li class="text-sm text-dark-300">Postman, Swagger, APIDog</li>
+                <li class="text-sm text-dark-300">Jira, ClickUp</li>
+                <li class="text-sm text-dark-300">Agile Scrum, UML</li>
+              </ul>
+            </div>
 
-      <ul class="space-y-2">
-        <li class="text-sm text-dark-300">Git, GitLab, GitHub</li>
-        <li class="text-sm text-dark-300">Postman, Swagger, APIDog</li>
-        <li class="text-sm text-dark-300">Jira, ClickUp</li>
-        <li class="text-sm text-dark-300">Agile Scrum, UML</li>
-      </ul>
-    </div>
-        <!-- Data & AI -->
-    <div class="p-8 rounded-xl bg-dark-800/30 border border-dark-700/50 hover:border-primary-600/30 transition-all">
-      <h4 class="text-primary-400 font-semibold mb-4 flex items-center gap-2">
-        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-10V4m0 16v-2"/>
-        </svg>
-        IA
-      </h4>
+            <!-- Data & AI -->
+            <div class="p-8 rounded-xl bg-dark-800/30 border border-dark-700/50 hover:border-primary-600/30 transition-all">
+              <h4 class="text-primary-400 font-semibold mb-4 flex items-center gap-2">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-10V4m0 16v-2"/>
+                </svg>
+                {{ 'about.skills.aiAndData' | translate }}
+              </h4>
 
-      <ul class="space-y-2">
-        <li class="text-sm text-dark-300">STT / TTS</li>
-        <li class="text-sm text-dark-300">LLM, OpenAI, Groq</li>
-        <li class="text-sm text-dark-300">Python</li>
-        <li class="text-sm text-dark-300">Mediapipe</li>
-      </ul>
-    </div>
-        
-
-  </div>
-</div>
-<br>
-    <h3 class="text-2xl font-display font-bold text-dark-100 mb-8 text-center">
-    Langues
-  </h3>
-
-        <!-- Highlights -->
-        <div class="grid grid-cols-2 gap-4 mt-8">
-          <div *ngFor="let lang of portfolio.languages" 
-               class="flex items-start gap-3 p-4 rounded-lg bg-dark-800/30 border border-dark-700/50 hover:border-primary-600/30 transition-all">
-            <svg class="w-5 h-5 text-primary-500 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
-              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-            </svg>
-            <span class="text-sm text-dark-300">{{lang.language}}</span>
+              <ul class="space-y-2">
+                <li class="text-sm text-dark-300">STT / TTS</li>
+                <li class="text-sm text-dark-300">LLM, OpenAI, Groq</li>
+                <li class="text-sm text-dark-300">Python</li>
+                <li class="text-sm text-dark-300">Mediapipe</li>
+              </ul>
+            </div>
           </div>
         </div>
 
-        
+        <!-- Formation Section -->
+        <div class="mt-16 animate-slide-up">
+          <h3 class="text-2xl font-display font-bold text-dark-100 mb-8 text-center">
+            {{ 'about.formation.title' | translate }}
+          </h3>
+
+          <div class="space-y-6">
+            <!-- Formation 1 -->
+            <div class="p-6 rounded-xl bg-dark-800/30 border border-dark-700/50 hover:border-primary-600/30 transition-all">
+              <div class="flex items-start gap-4">
+                <div class="flex-shrink-0">
+                  <div class="w-12 h-12 rounded-lg bg-primary-600/10 flex items-center justify-center">
+                    <svg class="w-6 h-6 text-primary-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5z"/>
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"/>
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222"/>
+                    </svg>
+                  </div>
+                </div>
+                <div class="flex-grow">
+                  <h4 class="text-lg font-semibold text-dark-100 mb-1">
+                    Ingénierie en Génie Logiciel
+                  </h4>
+                  <p class="text-sm text-primary-400 mb-2">
+                    École Supérieure Privée de Technologies et d'Ingénierie TEKUP
+                  </p>
+                  <p class="text-xs text-dark-400 flex items-center gap-1">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                    </svg>
+                    En cours
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Formation 2 -->
+            <div class="p-6 rounded-xl bg-dark-800/30 border border-dark-700/50 hover:border-primary-600/30 transition-all">
+              <div class="flex items-start gap-4">
+                <div class="flex-shrink-0">
+                  <div class="w-12 h-12 rounded-lg bg-primary-600/10 flex items-center justify-center">
+                    <svg class="w-6 h-6 text-primary-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5z"/>
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"/>
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222"/>
+                    </svg>
+                  </div>
+                </div>
+                <div class="flex-grow">
+                  <h4 class="text-lg font-semibold text-dark-100 mb-1">
+                    Licence en Technologie de l'Informatique
+                  </h4>
+                  <p class="text-sm text-primary-400 mb-2">
+                    Institut Supérieur des Études Technologiques de Charguia
+                  </p>
+                  <p class="text-xs text-dark-400 flex items-center gap-1">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                    </svg>
+                    2020 - 2023
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Langues Section -->
+        <div class="mt-16 animate-slide-up">
+          <h3 class="text-2xl font-display font-bold text-dark-100 mb-8 text-center">
+            Langues
+          </h3>
+
+          <div class="grid grid-cols-2 gap-4">
+            <div *ngFor="let lang of portfolio.languages" 
+                 class="flex items-start gap-3 p-4 rounded-lg bg-dark-800/30 border border-dark-700/50 hover:border-primary-600/30 transition-all">
+              <svg class="w-5 h-5 text-primary-500 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+              </svg>
+              <span class="text-sm text-dark-300">{{lang.language}}</span>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-
-    </div>
+    </ng-container>
+  </div>
 </section>

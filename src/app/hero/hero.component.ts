@@ -1,31 +1,34 @@
 import { Component, OnInit, OnDestroy, Inject, PLATFORM_ID } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { CommonModule, isPlatformBrowser } from '@angular/common';
+import { Observable } from 'rxjs';
 import { PortfolioService } from '../services/portfolio.service';
+import { TranslationService } from '../services/translation.service';
+import { TranslatePipe } from '../pipes/translate.pipe';
 import { Portfolio } from '../models/portfolio.model';
-import { isPlatformBrowser } from '@angular/common';
 
 @Component({
   selector: 'app-hero',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, TranslatePipe],
   templateUrl: './hero.component.html',
   styleUrl: './hero.component.css'
 })
 export class HeroComponent implements OnInit, OnDestroy {
-  portfolio!: Portfolio;
+  portfolio$!: Observable<import('../models/portfolio.model').Portfolio>;
   scrolled = false;
   private scrollListener!: () => void;
   private isBrowser = false;
 
   constructor(
     private portfolioService: PortfolioService,
+    private translationService: TranslationService,
     @Inject(PLATFORM_ID) private platformId: Object
   ) {
     this.isBrowser = isPlatformBrowser(this.platformId);
   }
 
   ngOnInit(): void {
-    this.portfolio = this.portfolioService.getPortfolio();
+    this.portfolio$ = this.portfolioService.portfolio$;
     
     if (this.isBrowser) {
       this.scrollListener = () => {
@@ -52,15 +55,5 @@ export class HeroComponent implements OnInit, OnDestroy {
     element?.scrollIntoView({ behavior: 'smooth' });
   }
 
-  // helper to safely access window
-  private safeWindow(): Window | undefined {
-    return this.isBrowser ? window : undefined;
-  }
 
-  // example of replacing direct window usage
-  someMethodThatUsedWindow(): void {
-    const w = this.safeWindow();
-    if (!w) return;
-    // use w instead of window, e.g. w.scrollTo(...)
-  }
 }

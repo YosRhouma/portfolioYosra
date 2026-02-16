@@ -1,5 +1,7 @@
 import { Component, HostListener } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { Observable } from 'rxjs';
+import { TranslationService, Language } from '../services/translation.service';
 
 @Component({
   selector: 'app-header',
@@ -11,6 +13,11 @@ import { CommonModule } from '@angular/common';
 export class HeaderComponent {
   isScrolled = false;
   isMobileMenuOpen = false;
+  currentLanguage$!: Observable<Language>;
+
+  constructor(private translationService: TranslationService) {
+    this.currentLanguage$ = this.translationService.getCurrentLanguage$();
+  }
 
   @HostListener('window:scroll', [])
   onScroll(): void {
@@ -30,5 +37,13 @@ export class HeaderComponent {
     this.closeMobileMenu();
     const element = document.getElementById(id);
     element?.scrollIntoView({ behavior: 'smooth' });
+  }
+
+  toggleLanguage(): void {
+    this.translationService.toggleLanguage();
+  }
+
+  translate(key: string, defaultValue: string = ''): string {
+    return this.translationService.translate(key, defaultValue);
   }
 }

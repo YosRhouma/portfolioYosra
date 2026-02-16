@@ -1,0 +1,245 @@
+{
+  "header": {
+    "about": "About",
+    "experiences": "Experiences",
+    "projects": "Projects",
+    "contact": "Contact Me"
+  },
+  "hero": {
+    "viewProjects": "View My Projects",
+    "downloadCV": "Download CV",
+    "title": "Full Stack Developer"
+  },
+  "about": {
+    "title": "About Me",
+    "summary": "Full Stack Developer, specialized in Spring Boot and Angular, with over 2 years of experience. I design and develop high-performance and scalable business applications, with particular attention to code quality and the integration of intelligent solutions (AI).",
+    "skills": {
+      "title": "Technical Skills",
+      "fullStack": "Full-Stack",
+      "toolsAndMethodologies": "Tools & Methodologies",
+      "aiAndData": "AI",
+      "backend": "Backend",
+      "frontend": "Frontend",
+      "devops": "DevOps",
+      "tools": "Tools",
+      "softSkills": "Soft Skills"
+    },
+    "formation": {
+      "title": "Education"
+    }
+  },
+  "experiences": {
+    "title": "Professional Experiences",
+    "current": "Currently",
+    "keyAchievements": "Key Achievements:",
+    "technologiesUsed": "Technologies Used:"
+  },
+  "projects": {
+    "title": "My Projects",
+    "description": "Discover the projects I have worked on, demonstrating my skills in architecture, design and full-stack development.",
+    "noImages": "No images",
+    "viewCode": "View Code",
+    "viewLive": "View Live Demo"
+  },
+  "contact": {
+    "title": "Let's Talk Together",
+    "description": "I'm always open to discussing new opportunities.",
+    "name": "Name",
+    "email": "Email",
+    "subject": "Subject",
+    "message": "Message",
+    "send": "Send Message",
+    "sending": "Sending...",
+    "successMessage": "Message sent successfully! I'll get back to you soon.",
+    "errorMessage": "Error sending message. Please try again.",
+    "form": {
+      "namePlaceholder": "Your name",
+      "emailPlaceholder": "your.email@example.com",
+      "subjectPlaceholder": "Subject of your message",
+      "messagePlaceholder": "Your message...",
+      "nameRequired": "Name is required and must contain at least 2 characters",
+      "emailRequired": "A valid email is required",
+      "subjectRequired": "Subject is required and must contain at least 5 characters",
+      "messageRequired": "Message is required and must contain at least 10 characters"
+    }
+  },
+  "footer": {
+    "description": "Full Stack Developer passionate about creating innovative and high-performance solutions.",
+    "navigation": "Navigation",
+    "resources": "Resources",
+    "contactSection": "Contact",
+    "home": "Home",
+    "links": {
+      "about": "About",
+      "experiences": "Experiences",
+      "projects": "Projects",
+      "contact": "Contact"
+    }
+  },
+  "serviceData": {
+    "personalInfo": {
+      "name": "Yosra Rhouma",
+      "title": "Full Stack Developer",
+      "description": "Development of business applications with Java/Spring Boot and Angular. Passionate about code best practices and technological innovation.",
+      "location": "Tunis, Tunisia"
+    },
+    "aboutSummary": "Full Stack Developer specialized in Spring Boot and Angular, with over 2 years of experience. I design and develop high-performance and scalable business applications, with particular attention to code quality and the integration of intelligent solutions (AI).",
+    "highlights": {
+      "highlight1": "REST API Development",
+      "highlight2": "Responsive Web Interface Development",
+      "highlight3": "Agile/Scrum Development"
+    },
+    "experiences": {
+      "exp1": {
+        "company": "UML Customer Relation",
+        "position": "Full Stack Developer",
+        "description": "Participation in the development of several full stack business-oriented projects, combining Spring Boot, Angular and AI-based solutions.",
+        "achievements": {
+          "ach1": "Development of a real-time AI application for facial micro-expression analysis (Synergology)",
+          "ach2": "Design of a community platform and art marketplace with conversational AI assistant (ArtIA)",
+          "ach3": "Implementation of an intelligent CV extraction and automatic structuring system",
+          "ach4": "Integration of AI solutions (STT, TTS, LLM) for voice assistants and chatbots",
+          "ach5": "Development of secure applications with authentication and user profile management"
+        },
+        "location": "Tunis, Tunisia"
+      },
+      "exp2": {
+        "company": "National Computer Center (CNI)",
+        "position": "Full Stack Developer",
+        "description": "End-of-studies project on the design and development of an online contest management platform.",
+        "achievements": {
+          "ach1": "Development of a web platform automating the contest process",
+          "ach2": "Implementation of automatic pre-selection score calculation algorithm",
+          "ach3": "Complete management of online registrations and candidate filtering",
+          "ach4": "Design of a clear and responsive user interface with Angular"
+        },
+        "location": "Tunis, Tunisia"
+      },
+      "exp3": {
+        "company": "Digital Bundle",
+        "position": "Backend Developer",
+        "description": "Internship focused on backend development of a car rental application.",
+        "achievements": {
+          "ach1": "Design and development of a car reservation system",
+          "ach2": "Management of availability and schedules",
+          "ach3": "Creation of dashboards for tracking rentals",
+          "ach4": "Collaboration with the frontend team for feature integration"
+        },
+        "location": "Tunisia"
+      }
+    },
+    "projects": {
+      "proj1": {
+        "title": "ArtIA – Art Marketplace & Community Platform",
+        "description": "Community platform and art marketplace with conversational AI assistant enabling intelligent navigation based on natural language queries.",
+        "shortDescription": "Art marketplace with intelligent AI assistant",
+        "features": {
+          "feat1": "Interactive gallery with personalized artist profiles",
+          "feat2": "Secure marketplace for artists and collectors",
+          "feat3": "Conversational AI assistant for intelligent navigation",
+          "feat4": "Natural language queries and personalized recommendations",
+          "feat5": "News and events management"
+        },
+        "context": "UML Customer Relation",
+        "role": "Full Stack Developer"
+      },
+      "proj2": {
+        "title": "Talent Marketplace",
+        "description": "Secure platform connecting talents with companies featuring robust authentication and complete user profile management.",
+        "shortDescription": "Connecting talents and recruiters",
+        "features": {
+          "feat1": "Secure authentication system with JWT",
+          "feat2": "Complete management of talent and company profiles",
+          "feat3": "Responsive and intuitive interface",
+          "feat4": "Robust REST backend with Spring Boot",
+          "feat5": "Advanced search and filtering"
+        },
+        "context": "UML Customer Relation",
+        "role": "Full Stack Developer"
+      },
+      "proj3": {
+        "title": "Synergology – Micro-Expression Analysis",
+        "description": "Real-time AI application for facial micro-expression analysis and behavioral interpretation.",
+        "shortDescription": "Real-time behavioral analysis powered by AI",
+        "features": {
+          "feat1": "Real-time facial micro-expression detection and interpretation",
+          "feat2": "Integration of Python AI services with Spring Boot backend",
+          "feat3": "Real-time communication via WebSocket",
+          "feat4": "Interactive web interface developed with Angular"
+        },
+        "context": "UML Customer Relation",
+        "role": "Full Stack Developer"
+      },
+      "proj4": {
+        "title": "Made4You – Artisan E-commerce Platform",
+        "description": "Complete e-commerce platform with AI assistant for customer service and personalized recommendations.",
+        "shortDescription": "Artisan e-commerce with intelligent recommendations",
+        "features": {
+          "feat1": "Complete management of artisan product catalog",
+          "feat2": "Secure shopping cart and payment system",
+          "feat3": "Dedicated seller space with dashboards",
+          "feat4": "AI assistant for instant customer support",
+          "feat5": "Personalized recommendations based on AI"
+        },
+        "context": "UML Customer Relation",
+        "role": "Full Stack Developer"
+      },
+      "proj5": {
+        "title": "CVThèque – Intelligent CV Extraction",
+        "description": "Automatic CV extraction and structuring system using AI (Groq API) with management interface.",
+        "shortDescription": "Intelligent CV extraction and management",
+        "features": {
+          "feat1": "Automatic extraction of information from CVs",
+          "feat2": "Intelligent data structuring via AI",
+          "feat3": "REST backend API for database insertion",
+          "feat4": "Angular interface for upload and CV management",
+          "feat5": "Intelligent parsing of skills and experiences"
+        },
+        "context": "UML Customer Relation",
+        "role": "Full Stack Developer"
+      },
+      "proj6": {
+        "title": "CallBot – Intelligent Voice Assistant",
+        "description": "Intelligent voice assistant for automatic appointment scheduling using STT, TTS and LLM.",
+        "shortDescription": "AI voice assistant for appointment management",
+        "features": {
+          "feat1": "Advanced speech recognition (STT) via OpenAI",
+          "feat2": "Natural voice synthesis (TTS)",
+          "feat3": "Conversational interaction via LLM",
+          "feat4": "Information collection and validation",
+          "feat5": "Automatic calendar recording"
+        },
+        "context": "UML Customer Relation",
+        "role": "AI/Backend Developer"
+      },
+      "proj7": {
+        "title": "Online Contest Management (Final Project)",
+        "description": "Web application automating the contest process with online registration and pre-selection algorithm.",
+        "shortDescription": "Online contest management platform",
+        "features": {
+          "feat1": "Online candidate registration with validation",
+          "feat2": "Automatic pre-selection score calculation via algorithm",
+          "feat3": "Intelligent filtering of eligible candidates",
+          "feat4": "Clear and responsive interface",
+          "feat5": "Admin dashboard for tracking"
+        },
+        "context": "CNI (Final Project)",
+        "role": "Full Stack Developer"
+      },
+      "proj8": {
+        "title": "Car Rental Application",
+        "description": "Web solution for car management and reservation with availability system.",
+        "shortDescription": "Car rental backend application",
+        "features": {
+          "feat1": "Online reservation system",
+          "feat2": "Availability and schedule management",
+          "feat3": "Dashboards for tracking rentals",
+          "feat4": "Simple and efficient architecture",
+          "feat5": "Intuitive user interface"
+        },
+        "context": "Digital Bundle (Internship)",
+        "role": "Backend Developer"
+      }
+    }
+  }
+}

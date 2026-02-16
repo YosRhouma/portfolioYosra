@@ -1,0 +1,245 @@
+{
+  "header": {
+    "about": "À propos",
+    "experiences": "Expériences",
+    "projects": "Projets",
+    "contact": "Me contacter"
+  },
+  "hero": {
+    "viewProjects": "Voir mes projets",
+    "downloadCV": "Télécharger CV",
+    "title": "Développeur Full Stack"
+  },
+  "about": {
+    "title": "À propos de moi",
+    "summary": "Développeur Full Stack, spécialisée en Spring Boot et Angular, avec plus de 2 ans d'expérience. Je conçois et développe des applications métiers performantes et évolutives, avec une attention particulière portée à la qualité du code et à l'intégration de solutions intelligentes (IA).",
+    "skills": {
+      "title": "Compétences techniques",
+      "fullStack": "Full-Stack",
+      "toolsAndMethodologies": "Outils & Méthodologies",
+      "aiAndData": "IA",
+      "backend": "Backend",
+      "frontend": "Frontend",
+      "devops": "DevOps",
+      "tools": "Outils",
+      "softSkills": "Soft-Skills"
+    },
+    "formation": {
+      "title": "Formation"
+    }
+  },
+  "experiences": {
+    "title": "Expériences Professionnelles",
+    "current": "Actuellement",
+    "keyAchievements": "Accomplissements clés:",
+    "technologiesUsed": "Technologies utilisées:"
+  },
+  "projects": {
+    "title": "Mes Projets",
+    "description": "Découvrez les projets sur lesquels j'ai travaillé, démontrant mes compétences en architecture, design et développement full-stack.",
+    "noImages": "Pas d'images",
+    "viewCode": "Voir le code",
+    "viewLive": "Voir le projet en direct"
+  },
+  "contact": {
+    "title": "Parlons ensemble",
+    "description": "Je suis toujours ouvert aux discussions sur de nouvelles opportunités.",
+    "name": "Nom",
+    "email": "Email",
+    "subject": "Sujet",
+    "message": "Message",
+    "send": "Envoyer le message",
+    "sending": "Envoi en cours...",
+    "successMessage": "Message envoyé avec succès! Je vous recontacterai bientôt.",
+    "errorMessage": "Erreur lors de l'envoi du message. Veuillez réessayer.",
+    "form": {
+      "namePlaceholder": "Votre nom",
+      "emailPlaceholder": "votre.email@exemple.com",
+      "subjectPlaceholder": "Sujet de votre message",
+      "messagePlaceholder": "Votre message...",
+      "nameRequired": "Le nom est requis et doit contenir au moins 2 caractères",
+      "emailRequired": "Un email valide est requis",
+      "subjectRequired": "Le sujet est requis et doit contenir au moins 5 caractères",
+      "messageRequired": "Le message est requis et doit contenir au moins 10 caractères"
+    }
+  },
+  "footer": {
+    "description": "Développeur Full Stack passionnée par la création de solutions innovantes et performantes.",
+    "navigation": "Navigation",
+    "resources": "Ressources",
+    "contactSection": "Contact",
+    "home": "Accueil",
+    "links": {
+      "about": "À propos",
+      "experiences": "Expériences",
+      "projects": "Projets",
+      "contact": "Contact"
+    }
+  },
+  "serviceData": {
+    "personalInfo": {
+      "name": "Yosra Rhouma",
+      "title": "Développeur Full Stack",
+      "description": "Développement d'applications métiers avec Java/Spring Boot et Angular. Passionnée par les bonnes pratiques de code et l'innovation technologique.",
+      "location": "Tunis, Tunisie"
+    },
+    "aboutSummary": "Développeur Full Stack, spécialisée en Spring Boot et Angular, avec plus de 2 ans d'expérience. Je conçois et développe des applications métiers performantes et évolutives, avec une attention particulière portée à la qualité du code et à l'intégration de solutions intelligentes (IA).",
+    "highlights": {
+      "highlight1": "Développement d'API Rest",
+      "highlight2": "Développement d'interfaces web responsive",
+      "highlight3": "Développement Agile/Scrum"
+    },
+    "experiences": {
+      "exp1": {
+        "company": "UML Customer Relation",
+        "position": "Développeur Full Stack",
+        "description": "Participation au développement de plusieurs projets full stack orientés métier, combinant Spring Boot, Angular et des solutions basées sur l'intelligence artificielle.",
+        "achievements": {
+          "ach1": "Développement d'une application IA en temps réel pour l'analyse des micro-expressions faciales (Synergologie)",
+          "ach2": "Conception d'une plateforme communautaire et marketplace d'art avec assistant IA conversationnel (ArtIA)",
+          "ach3": "Mise en place d'un système intelligent d'extraction et de structuration automatique de CV",
+          "ach4": "Intégration de solutions IA (STT, TTS, LLM) pour des assistants vocaux et chatbots",
+          "ach5": "Développement d'applications sécurisées avec authentification et gestion des profils utilisateurs"
+        },
+        "location": "Tunis, Tunisie"
+      },
+      "exp2": {
+        "company": "Centre National de l'Informatique (CNI)",
+        "position": "Développeur Full Stack",
+        "description": "Projet de fin d'études portant sur la conception et le développement d'une plateforme de gestion de concours en ligne.",
+        "achievements": {
+          "ach1": "Développement d'une plateforme web automatisant le processus de concours",
+          "ach2": "Implémentation d'un algorithme de calcul automatique du score de présélection",
+          "ach3": "Gestion complète des inscriptions en ligne et du filtrage des candidats",
+          "ach4": "Conception d'une interface utilisateur claire et responsive avec Angular"
+        },
+        "location": "Tunis, Tunisie"
+      },
+      "exp3": {
+        "company": "Digital Bundle",
+        "position": "Développeur Backend",
+        "description": "Stage de perfectionnement axé sur le développement backend d'une application de location de voitures.",
+        "achievements": {
+          "ach1": "Conception et développement d'un système de réservation de voitures",
+          "ach2": "Gestion des disponibilités et des plannings",
+          "ach3": "Création de tableaux de bord pour le suivi des locations",
+          "ach4": "Collaboration avec l'équipe frontend pour l'intégration des fonctionnalités"
+        },
+        "location": "Tunisie"
+      }
+    },
+    "projects": {
+      "proj1": {
+        "title": "ArtIA – Marketplace & plateforme communautaire",
+        "description": "Plateforme communautaire et marketplace d'art avec assistant IA conversationnel permettant une navigation intelligente basée sur des requêtes en langage naturel.",
+        "shortDescription": "Marketplace d'art avec assistant IA intelligent",
+        "features": {
+          "feat1": "Galerie interactive avec profils artistes personnalisés",
+          "feat2": "Marketplace sécurisée pour artistes et collectionneurs",
+          "feat3": "Assistant IA conversationnel pour navigation intelligente",
+          "feat4": "Requêtes en langage naturel et recommandations personnalisées",
+          "feat5": "Gestion des actualités et événements artistiques"
+        },
+        "context": "UML Customer Relation",
+        "role": "Développeur Full Stack"
+      },
+      "proj2": {
+        "title": "Talent Marketplace",
+        "description": "Plateforme sécurisée de mise en relation talents-entreprises avec authentification robuste et gestion complète des profils utilisateurs.",
+        "shortDescription": "Mise en relation talents et recruteurs",
+        "features": {
+          "feat1": "Système d'authentification sécurisé avec JWT",
+          "feat2": "Gestion complète des profils talents et entreprises",
+          "feat3": "Interface responsive et intuitive",
+          "feat4": "Backend REST robuste avec Spring Boot",
+          "feat5": "Recherche et filtrage avancés"
+        },
+        "context": "UML Customer Relation",
+        "role": "Développeur Full Stack"
+      },
+      "proj3": {
+        "title": "Synergologie – Analyse des micro-expressions",
+        "description": "Application IA en temps réel pour l'analyse des micro-expressions faciales et l'interprétation comportementale.",
+        "shortDescription": "Analyse comportementale en temps réel basée sur l'IA",
+        "features": {
+          "feat1": "Détection et interprétation des micro-expressions faciales en temps réel",
+          "feat2": "Intégration de services IA Python avec backend Spring Boot",
+          "feat3": "Communication temps réel via WebSocket",
+          "feat4": "Interface web interactive développée avec Angular"
+        },
+        "context": "UML Customer Relation",
+        "role": "Développeur Full Stack"
+      },
+      "proj4": {
+        "title": "Made4You – Plateforme E-commerce Artisanal",
+        "description": "Plateforme e-commerce complète avec assistant IA pour le service client et recommandations personnalisées.",
+        "shortDescription": "E-commerce artisanal avec recommandations intelligentes",
+        "features": {
+          "feat1": "Gestion complète du catalogue produits artisanaux",
+          "feat2": "Système de panier et paiement sécurisé",
+          "feat3": "Espace vendeur dédié avec tableaux de bord",
+          "feat4": "Assistant IA pour support client instantané",
+          "feat5": "Recommandations personnalisées basées sur l'IA"
+        },
+        "context": "UML Customer Relation",
+        "role": "Développeur Full Stack"
+      },
+      "proj5": {
+        "title": "CVThèque – Extraction intelligente de CV",
+        "description": "Système d'extraction et de structuration automatique de CV à l'aide de l'IA (API Groq) avec interface de gestion.",
+        "shortDescription": "Extraction intelligente et gestion de CV",
+        "features": {
+          "feat1": "Extraction automatique des informations depuis les CV",
+          "feat2": "Structuration intelligente des données via IA",
+          "feat3": "API backend REST pour insertion en base de données",
+          "feat4": "Interface Angular pour upload et gestion des CV",
+          "feat5": "Parsing intelligent des compétences et expériences"
+        },
+        "context": "UML Customer Relation",
+        "role": "Développeur Full Stack"
+      },
+      "proj6": {
+        "title": "CallBot – Assistant vocal intelligent",
+        "description": "Assistant vocal intelligent pour la prise automatique de rendez-vous utilisant STT, TTS et LLM.",
+        "shortDescription": "Assistant vocal IA pour gestion de rendez-vous",
+        "features": {
+          "feat1": "Reconnaissance vocale avancée (STT) via OpenAI",
+          "feat2": "Synthèse vocale naturelle (TTS)",
+          "feat3": "Interaction conversationnelle via LLM",
+          "feat4": "Collecte d'informations et validation",
+          "feat5": "Enregistrement automatique dans le calendrier"
+        },
+        "context": "UML Customer Relation",
+        "role": "Développeur IA/Backend"
+      },
+      "proj7": {
+        "title": "Gestion de Concours en Ligne (PFE)",
+        "description": "Application web automatisant le processus de concours avec inscription en ligne et algorithme de présélection.",
+        "shortDescription": "Plateforme de gestion de concours en ligne",
+        "features": {
+          "feat1": "Inscription en ligne des candidats avec validation",
+          "feat2": "Calcul automatique du score de présélection via algorithme",
+          "feat3": "Filtrage intelligent des candidats éligibles",
+          "feat4": "Interface claire et responsive",
+          "feat5": "Tableau de bord administrateur pour suivi"
+        },
+        "context": "CNI (PFE)",
+        "role": "Développeur Full Stack"
+      },
+      "proj8": {
+        "title": "Application de Location de Voitures",
+        "description": "Solution web pour la gestion et la réservation de voitures avec système de disponibilités.",
+        "shortDescription": "Application backend de location de voitures",
+        "features": {
+          "feat1": "Système de réservation en ligne",
+          "feat2": "Gestion des disponibilités et planning",
+          "feat3": "Tableaux de bord pour suivi des locations",
+          "feat4": "Architecture simple et efficace",
+          "feat5": "Interface utilisateur intuitive"
+        },
+        "context": "Digital Bundle (Stage)",
+        "role": "Développeur Backend"
+      }
+    }
+  }
+}

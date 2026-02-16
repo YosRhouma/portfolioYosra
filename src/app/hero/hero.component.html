@@ -6,6 +6,7 @@
   </div>
 
   <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <ng-container *ngIf="portfolio$ | async as portfolio">
     <div class="grid lg:grid-cols-2 gap-12 items-center">
       <!-- Content Left -->
       <div class="space-y-6 animate-slide-up">
@@ -40,10 +41,16 @@
            <span class="px-4 py-2 rounded-lg bg-dark-800/50 border border-dark-700 text-dark-300 text-sm font-medium hover:border-primary-600/50 hover:bg-primary-600/10 transition-all">
             Typescript
           </span>
+          <span class="px-4 py-2 rounded-lg bg-dark-800/50 border border-dark-700 text-dark-300 text-sm font-medium hover:border-primary-600/50 hover:bg-primary-600/10 transition-all">
+            Javascript
+          </span>
            <span class="px-4 py-2 rounded-lg bg-dark-800/50 border border-dark-700 text-dark-300 text-sm font-medium hover:border-primary-600/50 hover:bg-primary-600/10 transition-all">
             Html
           </span>
            <span class="px-4 py-2 rounded-lg bg-dark-800/50 border border-dark-700 text-dark-300 text-sm font-medium hover:border-primary-600/50 hover:bg-primary-600/10 transition-all">
+            CSS
+          </span>
+          <span class="px-4 py-2 rounded-lg bg-dark-800/50 border border-dark-700 text-dark-300 text-sm font-medium hover:border-primary-600/50 hover:bg-primary-600/10 transition-all">
             CSS
           </span>
           
@@ -52,16 +59,16 @@
         <!-- CTA Buttons -->
         <div class="flex flex-wrap gap-4 pt-4">
           <a href="#projects"             class="inline-flex items-center gap-2 px-8 py-4 border-2 border-dark-700 hover:border-primary-600 text-dark-100 hover:text-primary-500 font-semibold rounded-xl transition-all duration-300">
-            Voir mes projets
+            {{ 'hero.viewProjects' | translate }}
           </a>
           <a
-            [href]="portfolio.personalInfo.cv || '/files/CV Yosra Rhouma_Développeuse Full-stack.pdf'"
+            [href]="portfolio.personalInfo.cv || '/files/CV Yosra Rhouma_Développeur Full-stack.pdf'"
             download="Yosra_Rhouma_CV.pdf"
             target="_blank"
             rel="noopener"
             class="inline-flex items-center gap-2 px-8 py-4 border-2 border-dark-700 hover:border-primary-600 text-dark-100 hover:text-primary-500 font-semibold rounded-xl transition-all duration-300"
           >
-            Télécharger CV
+            {{ 'hero.downloadCV' | translate }}
           </a>
           <!-- Social Links -->
         <div class="flex gap-4 pt-2">
@@ -108,7 +115,7 @@
           </div>
 
           <!-- Floating Badge -->
-          <div class="absolute -bottom-3 -right-4 bg-dark-900 border border-primary-600 rounded-xl px-3 py-2 shadow-lg">
+          <!-- <div class="absolute -bottom-3 -right-4 bg-dark-900 border border-primary-600 rounded-xl px-3 py-2 shadow-lg">
             <div class="text-center">
               <p class="text-xl font-bold bg-gradient-to-r from-primary-400 to-primary-600 bg-clip-text text-transparent">
                 2+
@@ -117,7 +124,7 @@
                 Années d'expérience
               </p>
             </div>
-          </div>
+          </div> -->
 
         </div>
       </div>
@@ -132,5 +139,6 @@
         </svg>
       </a>
     </div>
+    </ng-container>
   </div>
 </section>

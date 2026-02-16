@@ -31,6 +31,9 @@ export interface Project {
   github?: string;
   featured: boolean;
   images: string[];
+  duration?: string;
+  context?: string;
+  role?: string;
 
 }
 
