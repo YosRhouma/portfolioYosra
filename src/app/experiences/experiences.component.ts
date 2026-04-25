@@ -1,8 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { PortfolioService } from '../services/portfolio.service';
-import { Observable } from 'rxjs';
-import { Portfolio } from '../models/portfolio.model';
 import { TranslationService } from '../services/translation.service';
 import { TranslatePipe } from '../pipes/translate.pipe';
 import { Experience } from '../models/portfolio.model';
@@ -10,30 +8,20 @@ import { Experience } from '../models/portfolio.model';
 @Component({
   selector: 'app-experiences',
   standalone: true,
+  changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [CommonModule, TranslatePipe],
   templateUrl: './experiences.component.html',
   styleUrl: './experiences.component.css'
 })
-export class ExperiencesComponent implements OnInit {
-  experiences: Experience[] = [];
+export class ExperiencesComponent {
   expandedId: string | null = null;
-  portfolio$!: Observable<Portfolio>;
+  readonly portfolio$;
 
   constructor(
-    private portfolioService: PortfolioService,
-    private translationService: TranslationService
-  ) {}
-
-  ngOnInit(): void {
-    // Initialize portfolio$ and subscribe to get translated experiences
+    private readonly portfolioService: PortfolioService,
+    private readonly translationService: TranslationService
+  ) {
     this.portfolio$ = this.portfolioService.portfolio$;
-    this.portfolio$.subscribe(portfolio => {
-      this.experiences = portfolio?.experiences || [];
-    });
-  }
-
-  private loadExperiences(): void {
-    this.experiences = this.portfolioService.getTranslatedExperiences();
   }
 
   toggleExpanded(id: string): void {
@@ -46,8 +34,8 @@ export class ExperiencesComponent implements OnInit {
     return new Date(date).toLocaleDateString(locale, { year: 'numeric', month: 'long' });
   }
 
-  translate(key: string, defaultValue: string = ''): string {
-    return this.translationService.translate(key, defaultValue);
+  trackById(_: number, experience: Experience): string {
+    return experience.id;
   }
 }
 

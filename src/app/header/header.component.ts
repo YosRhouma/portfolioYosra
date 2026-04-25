@@ -1,21 +1,22 @@
-import { Component, HostListener } from '@angular/core';
+import { ChangeDetectionStrategy, Component, HostListener } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Observable } from 'rxjs';
-import { TranslationService, Language } from '../services/translation.service';
+import { TranslatePipe } from '../pipes/translate.pipe';
+import { TranslationService } from '../services/translation.service';
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [CommonModule],
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  imports: [CommonModule, TranslatePipe],
   templateUrl: './header.component.html',
   styleUrl: './header.component.css'
 })
 export class HeaderComponent {
   isScrolled = false;
   isMobileMenuOpen = false;
-  currentLanguage$!: Observable<Language>;
+  readonly currentLanguage$;
 
-  constructor(private translationService: TranslationService) {
+  constructor(private readonly translationService: TranslationService) {
     this.currentLanguage$ = this.translationService.getCurrentLanguage$();
   }
 
@@ -35,15 +36,14 @@ export class HeaderComponent {
 
   scrollToSection(id: string): void {
     this.closeMobileMenu();
+    if (typeof document === 'undefined') {
+      return;
+    }
     const element = document.getElementById(id);
     element?.scrollIntoView({ behavior: 'smooth' });
   }
 
   toggleLanguage(): void {
     this.translationService.toggleLanguage();
-  }
-
-  translate(key: string, defaultValue: string = ''): string {
-    return this.translationService.translate(key, defaultValue);
   }
 }

@@ -1,39 +1,45 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnDestroy, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule, ReactiveFormsModule, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { EmailService } from '../services/email.service';
 import { TranslationService } from '../services/translation.service';
 import { TranslatePipe } from '../pipes/translate.pipe';
 import { PortfolioService } from '../services/portfolio.service';
-import { Observable } from 'rxjs';
-import { Portfolio } from '../models/portfolio.model';
 
 @Component({
   selector: 'app-contact',
   standalone: true,
-  imports: [CommonModule, FormsModule, ReactiveFormsModule, TranslatePipe],
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  imports: [CommonModule, ReactiveFormsModule, TranslatePipe],
   templateUrl: './contact.component.html',
   styleUrl: './contact.component.css'
 })
-export class ContactComponent implements OnInit {
+export class ContactComponent implements OnInit, OnDestroy {
   contactForm!: FormGroup;
   loading = false;
   submitted = false;
   successMessage = '';
   errorMessage = '';
-  portfolio$!: Observable<Portfolio>;
+  readonly portfolio$;
+  private successMessageTimeoutId?: ReturnType<typeof setTimeout>;
 
   constructor(
-    private fb: FormBuilder,
-    private emailService: EmailService,
-    private translationService: TranslationService
-    , private portfolioService: PortfolioService
-  ) {}
+    private readonly fb: FormBuilder,
+    private readonly emailService: EmailService,
+    private readonly translationService: TranslationService,
+    private readonly portfolioService: PortfolioService
+  ) {
+    this.portfolio$ = this.portfolioService.portfolio$;
+  }
 
   ngOnInit(): void {
     this.initializeForm();
-    // initialize portfolio$ for template usage
-    this.portfolio$ = this.portfolioService.portfolio$;
+  }
+
+  ngOnDestroy(): void {
+    if (this.successMessageTimeoutId) {
+      clearTimeout(this.successMessageTimeoutId);
+    }
   }
 
   initializeForm(): void {
@@ -45,7 +51,7 @@ export class ContactComponent implements OnInit {
     });
   }
 
-  onSubmit(): void {
+  async onSubmit(): Promise<void> {
     this.submitted = true;
 
     if (this.contactForm.invalid) {
@@ -56,25 +62,37 @@ export class ContactComponent implements OnInit {
     this.successMessage = '';
     this.errorMessage = '';
 
-    this.emailService.sendEmail(this.contactForm.value).then(
-      (response) => {
-        this.successMessage = this.translationService.translate('contact.successMessage', 'Message sent successfully!');
-        this.contactForm.reset();
-        this.submitted = false;
-        this.loading = false;
-        setTimeout(() => { 
-          this.successMessage = '';
-        }, 5000);
-      },
-      (error) => {
-        console.error('Error details:', error);
-        this.errorMessage = this.translationService.translate('contact.errorMessage', 'Error sending message.');
-        this.loading = false;
-      }
-    );
+    try {
+      await this.emailService.sendEmail(this.contactForm.getRawValue());
+      this.successMessage = this.translationService.translate(
+        'contact.successMessage',
+        'Message sent successfully!'
+      );
+      this.contactForm.reset();
+      this.submitted = false;
+      this.scheduleSuccessMessageClear();
+    } catch (error) {
+      console.error('Error details:', error);
+      this.errorMessage = this.translationService.translate(
+        'contact.errorMessage',
+        'Error sending message.'
+      );
+    } finally {
+      this.loading = false;
+    }
   }
 
   get f() {
     return this.contactForm.controls;
+  }
+
+  private scheduleSuccessMessageClear(): void {
+    if (this.successMessageTimeoutId) {
+      clearTimeout(this.successMessageTimeoutId);
+    }
+
+    this.successMessageTimeoutId = setTimeout(() => {
+      this.successMessage = '';
+    }, 5000);
   }
 }

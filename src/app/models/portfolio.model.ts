@@ -34,7 +34,6 @@ export interface Project {
   duration?: string;
   context?: string;
   role?: string;
-
 }
 
 export interface SocialLink {
@@ -63,6 +62,6 @@ export interface Portfolio {
   experiences: Experience[];
   projects: Project[];
   socialLinks: SocialLink[];
-  languages: Array<{ language: string}>;
+  languages: Array<{ language: string }>;
   certifications?: Array<{ title: string; issuer: string; date: string }>;
 }

@@ -7,50 +7,67 @@
   },
   "hero": {
     "viewProjects": "Voir mes projets",
-    "downloadCV": "Télécharger CV",
-    "title": "Développeur Full Stack"
+    "downloadCV": "Télécharger le CV",
+    "title": "Développeuse Full Stack",
+    "scroll": "Défiler"
   },
   "about": {
     "title": "À propos de moi",
-    "summary": "Développeur Full Stack, spécialisée en Spring Boot et Angular, avec plus de 2 ans d'expérience. Je conçois et développe des applications métiers performantes et évolutives, avec une attention particulière portée à la qualité du code et à l'intégration de solutions intelligentes (IA).",
+    "summary": "Développeuse Full Stack spécialisée en Spring Boot et Angular, avec plus de 2 ans d'expérience. Je conçois et développe des applications métiers performantes et évolutives, avec une attention particulière portée à la qualité du code et à l'intégration de solutions intelligentes (IA).",
     "skills": {
       "title": "Compétences techniques",
       "fullStack": "Full-Stack",
-      "toolsAndMethodologies": "Outils & Méthodologies",
-      "aiAndData": "IA",
+      "toolsAndMethodologies": "Outils et méthodologies",
+      "aiAndData": "IA et données",
       "backend": "Backend",
       "frontend": "Frontend",
       "devops": "DevOps",
       "tools": "Outils",
-      "softSkills": "Soft-Skills"
+      "softSkills": "Soft Skills"
     },
     "formation": {
       "title": "Formation"
+    },
+    "education": {
+      "softwareEngineeringDegree": "Ingénierie en Génie Logiciel",
+      "softwareEngineeringSchool": "École Supérieure Privée de Technologies et d'Ingénierie TEKUP",
+      "itDegree": "Licence en Technologie de l'Informatique",
+      "itSchool": "Institut Supérieur des Études Technologiques de Charguia",
+      "inProgress": "En cours"
+    },
+    "languages": {
+      "title": "Langues"
     }
   },
   "experiences": {
-    "title": "Expériences Professionnelles",
-    "current": "Actuellement",
-    "keyAchievements": "Accomplissements clés:",
-    "technologiesUsed": "Technologies utilisées:"
+    "title": "Expériences professionnelles",
+    "current": "Aujourd'hui",
+    "keyAchievements": "Accomplissements clés",
+    "technologiesUsed": "Technologies utilisées"
   },
   "projects": {
-    "title": "Mes Projets",
-    "description": "Découvrez les projets sur lesquels j'ai travaillé, démontrant mes compétences en architecture, design et développement full-stack.",
+    "title": "Mes projets",
+    "description": "Découvrez les projets sur lesquels j'ai travaillé, démontrant mes compétences en architecture, design et développement full stack.",
     "noImages": "Pas d'images",
-    "viewCode": "Voir le code",
-    "viewLive": "Voir le projet en direct"
+    "viewCode": "Code",
+    "viewLive": "Voir le projet",
+    "showLess": "Voir moins",
+    "showMore": "Voir plus de détails",
+    "labels": {
+      "technologies": "Technologies",
+      "highlights": "Points clés"
+    }
   },
   "contact": {
     "title": "Parlons ensemble",
-    "description": "Je suis toujours ouvert aux discussions sur de nouvelles opportunités.",
+    "description": "Je suis toujours ouverte aux discussions sur de nouvelles opportunités.",
     "name": "Nom",
     "email": "Email",
     "subject": "Sujet",
     "message": "Message",
     "send": "Envoyer le message",
     "sending": "Envoi en cours...",
-    "successMessage": "Message envoyé avec succès! Je vous recontacterai bientôt.",
+    "successMessage": "Message envoyé avec succès ! Je vous recontacterai bientôt.",
     "errorMessage": "Erreur lors de l'envoi du message. Veuillez réessayer.",
     "form": {
       "namePlaceholder": "Votre nom",
@@ -61,15 +78,20 @@
       "emailRequired": "Un email valide est requis",
       "subjectRequired": "Le sujet est requis et doit contenir au moins 5 caractères",
       "messageRequired": "Le message est requis et doit contenir au moins 10 caractères"
+    },
+    "info": {
+      "email": "Email",
+      "location": "Localisation",
+      "followMe": "Suivez-moi"
     }
   },
   "footer": {
-    "description": "Développeur Full Stack passionnée par la création de solutions innovantes et performantes.",
+    "description": "Développeuse Full Stack passionnée par la création de solutions innovantes et performantes.",
     "navigation": "Navigation",
     "resources": "Ressources",
     "contactSection": "Contact",
-    "home": "Accueil",
     "links": {
+      "home": "Accueil",
       "about": "À propos",
       "experiences": "Expériences",
       "projects": "Projets",
@@ -79,20 +101,20 @@
   "serviceData": {
     "personalInfo": {
       "name": "Yosra Rhouma",
-      "title": "Développeur Full Stack",
+      "title": "Développeuse Full Stack",
       "description": "Développement d'applications métiers avec Java/Spring Boot et Angular. Passionnée par les bonnes pratiques de code et l'innovation technologique.",
       "location": "Tunis, Tunisie"
     },
-    "aboutSummary": "Développeur Full Stack, spécialisée en Spring Boot et Angular, avec plus de 2 ans d'expérience. Je conçois et développe des applications métiers performantes et évolutives, avec une attention particulière portée à la qualité du code et à l'intégration de solutions intelligentes (IA).",
+    "aboutSummary": "Développeuse Full Stack spécialisée en Spring Boot et Angular, avec plus de 2 ans d'expérience. Je conçois et développe des applications métiers performantes et évolutives, avec une attention particulière portée à la qualité du code et à l'intégration de solutions intelligentes (IA).",
     "highlights": {
-      "highlight1": "Développement d'API Rest",
-      "highlight2": "Développement d'interfaces web responsive",
+      "highlight1": "Développement d'API REST",
+      "highlight2": "Développement d'interfaces web responsives",
       "highlight3": "Développement Agile/Scrum"
     },
     "experiences": {
       "exp1": {
         "company": "UML Customer Relation",
-        "position": "Développeur Full Stack",
+        "position": "Développeuse Full Stack",
         "description": "Participation au développement de plusieurs projets full stack orientés métier, combinant Spring Boot, Angular et des solutions basées sur l'intelligence artificielle.",
         "achievements": {
           "ach1": "Développement d'une application IA en temps réel pour l'analyse des micro-expressions faciales (Synergologie)",
@@ -105,7 +127,7 @@
       },
       "exp2": {
         "company": "Centre National de l'Informatique (CNI)",
-        "position": "Développeur Full Stack",
+        "position": "Développeuse Full Stack",
         "description": "Projet de fin d'études portant sur la conception et le développement d'une plateforme de gestion de concours en ligne.",
         "achievements": {
           "ach1": "Développement d'une plateforme web automatisant le processus de concours",
@@ -117,7 +139,7 @@
       },
       "exp3": {
         "company": "Digital Bundle",
-        "position": "Développeur Backend",
+        "position": "Développeuse Backend",
         "description": "Stage de perfectionnement axé sur le développement backend d'une application de location de voitures.",
         "achievements": {
           "ach1": "Conception et développement d'un système de réservation de voitures",
@@ -130,7 +152,7 @@
     },
     "projects": {
       "proj1": {
-        "title": "ArtIA – Marketplace & plateforme communautaire",
+        "title": "ArtIA - Marketplace et plateforme communautaire",
         "description": "Plateforme communautaire et marketplace d'art avec assistant IA conversationnel permettant une navigation intelligente basée sur des requêtes en langage naturel.",
         "shortDescription": "Marketplace d'art avec assistant IA intelligent",
         "features": {
@@ -141,7 +163,7 @@
           "feat5": "Gestion des actualités et événements artistiques"
         },
         "context": "UML Customer Relation",
-        "role": "Développeur Full Stack"
+        "role": "Développeuse Full Stack"
       },
       "proj2": {
         "title": "Talent Marketplace",
@@ -155,10 +177,10 @@
           "feat5": "Recherche et filtrage avancés"
         },
         "context": "UML Customer Relation",
-        "role": "Développeur Full Stack"
+        "role": "Développeuse Full Stack"
       },
       "proj3": {
-        "title": "Synergologie – Analyse des micro-expressions",
+        "title": "Synergologie - Analyse des micro-expressions",
         "description": "Application IA en temps réel pour l'analyse des micro-expressions faciales et l'interprétation comportementale.",
         "shortDescription": "Analyse comportementale en temps réel basée sur l'IA",
         "features": {
@@ -168,10 +190,10 @@
           "feat4": "Interface web interactive développée avec Angular"
         },
         "context": "UML Customer Relation",
-        "role": "Développeur Full Stack"
+        "role": "Développeuse Full Stack"
       },
       "proj4": {
-        "title": "Made4You – Plateforme E-commerce Artisanal",
+        "title": "Made4You - Plateforme e-commerce artisanale",
         "description": "Plateforme e-commerce complète avec assistant IA pour le service client et recommandations personnalisées.",
         "shortDescription": "E-commerce artisanal avec recommandations intelligentes",
         "features": {
@@ -182,10 +204,10 @@
           "feat5": "Recommandations personnalisées basées sur l'IA"
         },
         "context": "UML Customer Relation",
-        "role": "Développeur Full Stack"
+        "role": "Développeuse Full Stack"
       },
       "proj5": {
-        "title": "CVThèque – Extraction intelligente de CV",
+        "title": "CVThèque - Extraction intelligente de CV",
         "description": "Système d'extraction et de structuration automatique de CV à l'aide de l'IA (API Groq) avec interface de gestion.",
         "shortDescription": "Extraction intelligente et gestion de CV",
         "features": {
@@ -196,10 +218,10 @@
           "feat5": "Parsing intelligent des compétences et expériences"
         },
         "context": "UML Customer Relation",
-        "role": "Développeur Full Stack"
+        "role": "Développeuse Full Stack"
       },
       "proj6": {
-        "title": "CallBot – Assistant vocal intelligent",
+        "title": "CallBot - Assistant vocal intelligent",
         "description": "Assistant vocal intelligent pour la prise automatique de rendez-vous utilisant STT, TTS et LLM.",
         "shortDescription": "Assistant vocal IA pour gestion de rendez-vous",
         "features": {
@@ -210,10 +232,10 @@
           "feat5": "Enregistrement automatique dans le calendrier"
         },
         "context": "UML Customer Relation",
-        "role": "Développeur IA/Backend"
+        "role": "Développeuse IA/Backend"
       },
       "proj7": {
-        "title": "Gestion de Concours en Ligne (PFE)",
+        "title": "Gestion de concours en ligne (PFE)",
         "description": "Application web automatisant le processus de concours avec inscription en ligne et algorithme de présélection.",
         "shortDescription": "Plateforme de gestion de concours en ligne",
         "features": {
@@ -224,10 +246,10 @@
           "feat5": "Tableau de bord administrateur pour suivi"
         },
         "context": "CNI (PFE)",
-        "role": "Développeur Full Stack"
+        "role": "Développeuse Full Stack"
       },
       "proj8": {
-        "title": "Application de Location de Voitures",
+        "title": "Application de location de voitures",
         "description": "Solution web pour la gestion et la réservation de voitures avec système de disponibilités.",
         "shortDescription": "Application backend de location de voitures",
         "features": {
@@ -238,8 +260,12 @@
           "feat5": "Interface utilisateur intuitive"
         },
         "context": "Digital Bundle (Stage)",
-        "role": "Développeur Backend"
+        "role": "Développeuse Backend"
       }
-    }
+    },
+    "languages": [
+      { "language": "Français" },
+      { "language": "Anglais" }
+    ]
   }
 }

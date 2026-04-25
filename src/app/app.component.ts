@@ -1,5 +1,4 @@
-import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { HeaderComponent } from './header/header.component';
 import { HeroComponent } from './hero/hero.component';
 import { AboutComponent } from './about/about.component';
@@ -11,6 +10,7 @@ import { ContactComponent } from './contact/contact.component';
 @Component({
   selector: 'app-root',
   standalone: true,
+  changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [
     HeaderComponent,
     HeroComponent,
@@ -20,21 +20,6 @@ import { ContactComponent } from './contact/contact.component';
     ContactComponent,
     FooterComponent
   ],
-  template: `
-    <div class="relative min-h-screen">
-      <app-header></app-header>
-      <main>
-        <app-hero></app-hero>
-        <app-about></app-about>
-        <app-experiences></app-experiences>
-        <app-projects></app-projects>
-        <app-contact></app-contact>
-      </main>
-      <app-footer></app-footer>
-    </div>
-  `,
-  styles: []
+  templateUrl: './app.component.html'
 })
-export class AppComponent {
-  title = 'Portfolio Yosra Rhouma';
-}
+export class AppComponent {}
